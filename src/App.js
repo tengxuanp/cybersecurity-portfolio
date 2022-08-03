@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
@@ -16,7 +16,7 @@ function App() {
       <Skills />
       <Work />
       <Contact />
-      <p>&nbsp; &nbsp; &nbsp;Designed by Raphael Pang.</p>
+      <div className="flex justify-center self-center">Designed by Raphael Pang.</div>
     </div>
   );
 }

@@ -1,12 +1,10 @@
 import React from 'react';
 
 import HTML from '../assets/html.png';
-import CSS from '../assets/css.png';
 import JavaScript from '../assets/javascript.png';
 import ReactImg from '../assets/react.png';
 import Illustrator from '../assets/illustrator.png';
 import Photoshop from '../assets/photoshop.png';
-import AWS from '../assets/aws.png';
 import Figma from '../assets/figma.png';
 import Tailwind from '../assets/tailwind.png';
 import SqlServer from '../assets/sql.png';
@@ -18,7 +16,7 @@ const Skills = () => {
         <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
             <div>
                 <p className='text-4xl font-bold inline border-b-4 border-black '>Skill</p>
-                <p className='py-4'> // These are the technologies that I've most experienced in:</p>
+                <p className='py-4'> &#47;&#47; These are the technologies that I've most experienced in:</p>
             </div>
 
             <div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8'>
@@ -28,8 +26,8 @@ const Skills = () => {
                 </div>
 
                 <div className='hover:scale-110 duration-200'>
-                    <img className='w-20 mx-auto hover:rotate-12 duration-500' src={CSS} alt="CSS icon" />
-                    <p className='my-4'>CSS</p>
+                    <img className='w-20 mx-auto hover:rotate-12 duration-500' src={Tailwind} alt="CSS icon" />
+                    <p className='my-4'>TAILWIND CSS</p>
                 </div>
 
                 <div className='hover:scale-110 duration-200'>
