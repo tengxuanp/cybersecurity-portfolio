@@ -21,7 +21,7 @@ const About = () => {
             </div>
                 <div className='max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 px-4'>
                     <motion.div 
-                      initial={{ opacity: 0 }}
+                      initial={{ opacity: 0.2 }}
                       whileInView={{ opacity: 1 }}
                       transition={{duration:0.8,delay:0.3}}
                       className='text-3xl font-bold
@@ -31,7 +31,7 @@ const About = () => {
                     </motion.div>
                 
                     <motion.div
-                        initial={{ opacity: 0 }}
+                        initial={{ opacity: 0.2 }}
                         whileInView={{ opacity: 1 }}
                         transition={{duration:0.8,delay:0.6}}
                     >
