@@ -10,7 +10,8 @@ const Navbar = () => {
     const handleClick = () => setNav(!nav)
 
   return (
-    <div className='fixed z-50 w-full h-[50px] flex justify-between items-center px-4 bg-[#F6EEEE] '>
+    <div className='fixed z-50 w-full h-[50px] flex justify-between items-center px-4 bg-white border-y-8 border-[#ffdede]'>
+    {/* F6EEEE */}
         <div className='cursor-pointer'>
         <Link to="home" smooth={true} duration={500}>
             <img src={Logo} alt="Logo" style={{width:'80px'}} />
@@ -52,7 +53,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <ul className={!nav ? 'hidden' : 'absolute top-0 right-0 w-[70%] h-screen bg-[#F6EEEE] flex flex-col justify-center items-center backdrop-blur-sm backdrop-opacity-10'} >
+        <ul className={!nav ? 'hidden' : 'absolute top-0 right-0 w-[70%] h-screen bg-[#ffdede] flex flex-col justify-center items-center backdrop-blur-sm backdrop-opacity-10'} >
             <li className='py-6 text-3xl hover:bg-black hover:text-white rounded-lg transition-colors'>
             <Link onClick={handleClick} to="home" smooth={true} duration={500}>
             Home
