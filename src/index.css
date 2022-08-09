@@ -47,3 +47,8 @@
     width: 350px;
 
 }
+
+.about {
+    -webkit-clip-path: polygon(0 4%, 100% 13%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 4%, 100% 13%, 100% 100%, 0% 100%);
+}

@@ -9,7 +9,7 @@ import Work from "./components/Work";
 function App() {
 
   return (
-    <div>
+    <div className="border-x-8 border-[#ffdede]">
       <Navbar />
       <Home />
       <About />

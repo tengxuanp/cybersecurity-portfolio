@@ -2,20 +2,38 @@ import React from "react";
 import {HiArrowNarrowRight} from 'react-icons/hi'
 import {Link} from 'react-scroll';
 import Cupid from '../assets/cupid.png';
+import { motion } from "framer-motion";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, MoveOut} from "react-scroll-motion";
 
+
 const Home = () => {
+  const name = {
+    initial: {
+        x: '-100vw',
+    },
+    animate: {
+        x: 0,
+        transition: {
+        delay: 0.5,
+        },
+    },
+    };
 
   return (
-    <div name='home' className='w-full h-screen bg-[#ffffff]'>
+    <div name='home' className='w-full h-screen bg-white'>
         {/* Container */}
-        <div className='max-w=[1000px] mx-auto px-8 flex flex-col justify-center h-full '>
+        <div className='max-w=[1000px] mx-auto flex flex-col justify-center h-full'>
           <div className='flex sm:grid sm:grid-cols-2 gap-1'>
 
             {/* div of left side */} 
-            <div className='m-auto ml-5'>
-              <p><span className='text-xl text-[#black] max-w-[700px]'>Hello there, I'm </span><span className='text-3xl sm:text-3xl font-bold text-[#black]'>Raphael Pang</span></p>
-              <p className='text-xl text-[#black] py-3 max-w-[700px]'>—Pursuing the way of digital product craftsmanship.</p>
+            <motion.div
+              variants={name}
+              initial='initial'
+              animate='animate'
+             className='m-auto px-2'>
+              <p><span className='text-xl text-[#black] text-center'>Hello there, I'm </span>
+                <span className='text-[4rem] sm:text-[6rem] font-bold text-[#black]'>Raphael</span></p>
+              <p className='text-xl text-black bg-[#ffdede] rounded-sm p-3 text-center max-w-[700px]' >Front-end Developer & Art Enthusiast.</p>
 
               {/* About Me button */}
               <Link to="about" smooth={true} duration={500}>
@@ -35,7 +53,7 @@ const Home = () => {
               </button>
               </Link>
 
-            </div>
+            </motion.div>
 
             <ScrollContainer>
               <ScrollPage>
