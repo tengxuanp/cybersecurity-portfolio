@@ -41,7 +41,9 @@ const Work = () => {
                 </div>
                 <div className='rounded-3xl border-2 border-black p-5'>
                     <h2 className='text-2xl font-bold pb-5'>The Conjuring Universe</h2>
-                    <p>The Conjuring Universe is a simplified fandom website targetting users who are interested to get a better understanding of the America media franchise The Conjuring Universe.</p>
+                    <p>The Conjuring Universe is a simplified fandom website targetting users to find out information of the America media franchise -- The Conjuring Universe.</p>
+                    <br />
+                    <p className='text-[0.8rem] text-gray-500'>*The website has NO jumpscares or any form of scaring elements.</p>
                     <br></br>
                     <div className=''><span className='font-bold py-2'>Video Demo:</span>
                         <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-b-2 transition-all' href='https://drive.google.com/file/d/1HD_1z-cgEs-yU2WW0JxmqtzTLSDikS_t/view?usp=sharing'>&nbsp;Desktop</a>|
@@ -70,16 +72,32 @@ const Work = () => {
                         </span>
                         <div>
                             <ul style={{ listStyleType: "disc" }}><span className='font-bold'>Built with:</span>
-                                <li className='cursor-auto'>React JS</li>
-                                <li className='cursor-auto'>SCSS</li>
-                                <li className='cursor-auto'>Tailwind</li>
+                            <div className='grid grid-cols-2'>
+                                <div>
+                                    <li className='cursor-auto'>React JS</li>
+                                    <li className='cursor-auto'>SCSS</li>
+                                    <li className='cursor-auto'>Tailwind</li>
+                                </div>
+                                <div>
+                                    <li className='cursor-auto'>Material UI</li>
+                                </div>
+                            </div>
+                                
                             </ul>
                             <br />
                             <ul style={{ listStyleType: "disc" }}><span className='font-bold'>Libraries used:</span>
-                                <li className='cursor-auto'>AOS(Aminate on scroll)</li>
-                                <li className='cursor-auto'>React Icons</li>
-                                <li className='cursor-auto'>React Scroll</li>
-                                <li className='cursor-auto'>Lottie Web</li>
+                                <div className='grid grid-cols-2'>
+                                    <div>
+                                        <li className='cursor-auto'>AOS</li>
+                                        <li className='cursor-auto'>React Icons</li>
+                                        <li className='cursor-auto'>React Scroll</li>
+                                        <li className='cursor-auto'>Lottie Web</li>
+                                    </div>
+                                    <div>
+                                        <li className='cursor-auto'>E-Commerce JS</li>
+                                        <li className='cursor-auto'>Stripe</li>
+                                    </div>
+                                </div>
                             </ul>
                         </div>
                     </div>
@@ -87,7 +105,7 @@ const Work = () => {
 
                 <div className='rounded-3xl border-2 border-black p-5'>
                 <h2 className='text-2xl font-bold pb-5'>The Chicken Bros</h2>
-                    <p>The Chicken Bros is a showcase of my artwork level with the theme of Chinese chicken restaurant. 90% of the assets are created with Photoshop / After Effects.</p>
+                    <p>The Chicken Bros is an art website with e-commorce implemented. Most of the assets are created with Photoshop / After Effects.</p>
                     <br></br>
                     <div className=''><span className='font-bold py-2'>Video Demo:</span>
                         <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-b-2 transition-all' href='https://drive.google.com/file/d/1O4zN3cLSGZ1v3jYRYEUpHurJ-fzaoVog/view?usp=sharing'>&nbsp;Desktop</a>
