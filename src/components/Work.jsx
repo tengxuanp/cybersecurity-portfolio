@@ -1,6 +1,7 @@
 import React from 'react'
 import tcu from '../assets/tcu.jpg'
 import tcb from '../assets/tcb.jpg'
+import rps from '../assets/rps.jpg'
 
 const Work = () => {
   return (
@@ -43,7 +44,7 @@ const Work = () => {
                     <h2 className='text-2xl font-bold pb-5'>The Conjuring Universe</h2>
                     <p>The Conjuring Universe is a simplified fandom website targetting users to find out information of the America media franchise -- The Conjuring Universe.</p>
                     <br />
-                    <p className='text-[0.8rem] text-gray-500'>*The website has NO jumpscares or any form of scaring elements.</p>
+                    <p className='text-[0.8rem] text-gray-500'>*The website consists NO jumpscares or any form of scaring elements.</p>
                     <br></br>
                     <div className=''><span className='font-bold py-2'>Video Demo:</span>
                         <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-b-2 transition-all' href='https://drive.google.com/file/d/1HD_1z-cgEs-yU2WW0JxmqtzTLSDikS_t/view?usp=sharing'>&nbsp;Desktop</a>|
@@ -118,6 +119,57 @@ const Work = () => {
 
                         <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/the-chicken-bros'>Github</a>
                         <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/the-chicken-bros/blob/main/README.md'>Documentation</a>
+                    </div>
+                </div>
+
+                {/* Grid Item */}
+                <div 
+                style={{backgroundImage:`url(${rps})`}} 
+                className='shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'
+                >
+                    {/* Hover Effects */}
+                    <div className='opacity-0 group-hover:opacity-100 transition-all'>
+                        <span className='pb-2 text-xl font-bold text-black tracking-wider underline underline-offset-2'>
+                        Rock, Paper, Scissors
+                        </span>
+                        <div>
+                            <ul style={{ listStyleType: "disc" }}><span className='font-bold'>Built with:</span>
+                            <div className='grid grid-cols-2'>
+                                <div>
+                                    <li className='cursor-auto'>React JS</li>
+                                    <li className='cursor-auto'>Tailwind</li>
+                                    <li className='cursor-auto'>Illustrator</li>
+                                </div>
+                            </div>
+                                
+                            </ul>
+                            <br />
+                            <ul style={{ listStyleType: "disc" }}><span className='font-bold'>Libraries used:</span>
+                                <div className='grid grid-cols-2'>
+                                    <div>
+                                        <li className='cursor-auto'>Framer Motion</li>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='rounded-3xl border-2 border-black p-5'>
+                <h2 className='text-2xl font-bold pb-5'>Rock, Paper, Scissors</h2>
+                    <p>A mini game with the grandpa character as your opponent, win 5 games to beat grandpa!</p>
+                    <br></br>
+                    {/* <div className=''><span className='font-bold py-2'>Video Demo:</span>
+                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-b-2 transition-all' href='https://drive.google.com/file/d/1O4zN3cLSGZ1v3jYRYEUpHurJ-fzaoVog/view?usp=sharing'>&nbsp;Desktop</a>
+                    </div> */}
+                    <div className='mt-4'>
+                        <a className="mr-4 py-2 px-3 rounded-lg text-2xl bg-[#ffdede] border-4 border-[#ffdede] hover:border-black hover:border-4 hover:animate-none transition-all
+                        after:content-[''] after:absolute after:border-green-500 after:bg-green-500 after:border-4 after:rounded-full after:w-2 after:h-2 after:animate-ping
+                        before:content-[''] before:absolute before:translate-x-[2.8rem] before:border-green-500 before:bg-green-500 before:border-4 before:rounded-full before:w-2 before:h-2" href='https://rock-paper-scissors-zeta-one.vercel.app/'>
+                        Live</a>
+
+                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/rock-paper-scissors'>Github</a>
+                        {/* <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/the-chicken-bros/blob/main/README.md'>Documentation</a> */}
                     </div>
                 </div>
 
