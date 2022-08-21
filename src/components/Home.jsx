@@ -33,11 +33,13 @@ const Home = () => {
              className='m-auto px-2'>
               <p><span className='text-xl text-[#black] text-center'>Hello there, I'm </span>
                 <span className='text-[4rem] sm:text-[6rem] font-bold text-[#black]'>Raphael</span></p>
-              <p className='text-xl text-black bg-[#ffdede] rounded-sm p-3 text-center max-w-[700px]' >Front-end Developer & Art Enthusiast.</p>
-
+              <div className="bg-[#ffdede] inline-block px-2 pt-2">
+              <p className=' text-black rounded-sm p-2 text-center max-w-[700px] animate-typing overflow-hidden whitespace-nowrap inline-block py-0'>
+                <span className="animate-blinkCaret border-r-2 border-black">Front-end Developer & Art Enthusiast. </span></p>
+              </div>
               {/* About Me button */}
               <Link to="about" smooth={true} duration={500}>
-              <button className='text-black group py-3 my-2 flex items-center '>
+              <button className='text-black group py-3 my-2 flex items-center'>
                   Read more about me 
               <span className='group-hover:rotate-90 duration-300'>
               <HiArrowNarrowRight className='ml-3'/>
@@ -46,9 +48,9 @@ const Home = () => {
               </Link>
 
               {/* View Work button */}
-              <Link className='max-w-[550px] flex place-content-end' to="work" smooth={true} duration={500}>
-              <button className='text-[black] bg-[#d3d3d3] py-4 px-4 self-start inline hover:text-black 
-                                 hover:bg-[#ffdede] rounded-3xl hover:rounded-xl duration-300'>
+              <Link className='max-w-[550px] h-[100px] flex place-content-end' to="work" smooth={true} duration={500}>
+              <button className='text-[black] bg-white py-4 px-4 self-start inline border-black border-t-2 border-l-2 border-r-4 border-b-4
+              hover:text-black hover:bg-[#ffdede] hover:border-r-2 hover:border-b-2 duration-300 active:bg-[#f8a0a0]'>
                 View Work
               </button>
               </Link>
