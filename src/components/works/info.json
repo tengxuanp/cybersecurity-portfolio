@@ -1,0 +1,52 @@
+[
+    {
+        "id":1,
+        "name":"one-yeah Party Game",
+        "url":"https://one-yeah-client.vercel.app",
+        "category":["web","game"],
+        "description":"This is a question-answering party game where multiple users can connect, taking turns to answer intriguing personal questions.",
+        "steps": [
+            "Users can create new lobbies or join existing ones made by others.",
+            "The room creator becomes the host and starts the game when everyone joins.",
+            "During the game, a random question is fetched from an API, and a user in the room is chosen to answer.",
+            "The chosen user can either answer the question (earning 1 point) or pass (earning 0 points).",
+            "The first user to reach 5 points wins."
+        ],
+        "tech":["Next.js","Node.js","Socket.IO"],
+        "imgPath":"image/one-yeah_preview.png",
+        "demo":"https://drive.google.com/file/d/1nT-uHqn7bvPLlL4Xq5UnMRGfBL6B4xO6/view?usp=sharing"
+    },
+    {
+        "id":2,
+        "name":"DishCraft",
+        "url":"https://youtube.com",
+        "category":["mobile"],
+        "description":"DishCraft allows users to search and select food ingredients. Once chosen, the app would return an array of dishes that can be crafted using the selected ingredients.",
+        "tech":["Next.js","Firebase"]
+    },
+    {
+        "id":3,
+        "name":"Rock, Paper, Scissors",
+        "url":"https://rock-paper-scissors-zeta-one.vercel.app/",
+        "category":["web","game"],
+        "description":"A simple Rock, Paper, Scissors game with Grandpa.",
+        "tech":["React","HTML Canvas"]
+    },
+    {
+        "id":4,
+        "name":"FormatForge",
+        "url":"uu",
+        "category":["web"],
+        "description":"FormatForge provides all-in-one service for crafting dynamic competition formats and lucky draws.",
+        "tech":["Next.js","Redux"]
+    },
+    {
+        "id":5,
+        "name":"The Chicken Bros",
+        "url":"https://the-chicken-bros.vercel.app",
+        "category":["web","misc"],
+        "description":"I played around with this app to level up my UI skills.",
+        "tech":["React","Tailwind"],
+        "imgPath":"src/assets/rps.jpg"
+    }
+]

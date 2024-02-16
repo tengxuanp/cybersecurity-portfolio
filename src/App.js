@@ -5,18 +5,22 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Skills from "./components/Skills";
 import Work from "./components/Work";
+import Scenery from "./components/Scenery";
 
 function App() {
 
   return (
-    <div className="border-x-8 border-[#ffdede]">
+    <div className="border-x-8 border-[#ffdede] z-[9999]">
       <Navbar />
       <Home />
-      <About />
-      <Skills />
+      
       <Work />
+      {/* <Skills /> */}
+      <Scenery />
+      <About />
       <Contact />
-      <div className="flex justify-center self-center">Designed by Raphael Pang.</div>
+      
+      <div className="flex justify-center self-center">©️ 2024 Rafael Pang. All Rights Reserved</div>
     </div>
   );
 }

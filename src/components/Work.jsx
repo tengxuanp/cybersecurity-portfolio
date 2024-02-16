@@ -1,221 +1,279 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import tcu from '../assets/tcu.jpg'
 import tcb from '../assets/tcb.jpg'
 import rps from '../assets/rps.jpg'
+// import btp from '../assets/btp.jpg'
+import btp from '../assets/btp.png'
+import '../styles/Work.css'
+import WorkComponent from './works/WorkComponent'
+import workInfo from './works/info.json'
+import { motion,AnimatePresence } from "framer-motion";
+import Sidebar from './works/Sidebar'
+
+import WorkCard from './works/WorkCard'
+import SpeechBubble from './SpeechBubble'
+
+
+
+  const Slide = ({ id,name,url,description,imgPath,tech,demo,category,steps}) => (
+    <div className="slide p-4 drop-shadow-lg bg-white bg-gradient-to-r from-[#ffdede] to-orange-50">
+      <div className='bg-white'>
+        <WorkComponent id={id} name={name} url={url} description={description} imgPath={imgPath} tech={tech} demo={demo} category={category} steps={steps} />
+      </div>
+    </div>
+  )
+
 
 const Work = () => {
+    const [cat, setCat] = useState([])
+    const [activeCat, setActiveCat] = useState(['all'])
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const [direction, setDirection] = useState('left')
+
+    const handleNext = () => {
+        setDirection("right");
+        setCurrentIndex((prevIndex) =>
+          prevIndex + 1 === slides.length ? 0 : prevIndex + 1
+        );
+      };
+    
+      const handlePrevious = () => {
+        setDirection("left");
+    
+        setCurrentIndex((prevIndex) =>
+          prevIndex - 1 < 0 ? slides.length - 1 : prevIndex - 1
+        );
+      };
+    
+      const handleDotClick = (index) => {
+        setDirection(index > currentIndex ? "right" : "left");
+        setCurrentIndex(index);
+      };
+
+    let slides = activeCat.includes('all')? workInfo.map(item => 
+    <Slide 
+      key={item.id} 
+      name={item.name} 
+      url={item.url} 
+      description={item.description} 
+      imgPath={item.imgPath}
+      tech={item.tech} 
+      demo={item.demo}
+      category={item.category}
+      steps={item.steps}
+    />)
+    :workInfo.filter(obj =>
+        Object.values(obj.category).some(value => {
+        return  activeCat.includes(value)
+        })
+      ).map(item=> 
+        {return <Slide 
+                  key={item.id} 
+                  name={item.name} 
+                  url={item.url} 
+                  description={item.description} 
+                  imgPath={item.imgPath}
+                  tech={item.tech} 
+                  demo={item.demo}
+                  category={item.category}
+                  steps={item.steps}
+                />})
+
+    useEffect(() => {
+        const cats = workInfo.map((item)=>item.category)
+        const concatCats = cats.reduce((acc, curr) => acc.concat(curr), []);
+        const filteredCat = new Set(concatCats);
+        const uniqueCat = Array.from(filteredCat);
+        setCat(uniqueCat)
+      },[]);
+
+    const handleCat = (item) => {
+        if(activeCat.includes(item) && item !== 'all'){
+            setActiveCat(activeCat.filter(item1 => item1 !== item))
+        }
+        else if(activeCat.includes(item) && item === 'all'){
+            return
+        }
+
+        else{
+            const newArr = [...activeCat,item]
+            setActiveCat(newArr)
+        }
+        setCurrentIndex(0);
+    }
+
+    useEffect(()=>{
+        const lastIndex = activeCat.length-1
+        if(activeCat.includes('all') && activeCat.length>=2 && activeCat[lastIndex]!=='all'){
+             setActiveCat(activeCat.filter(item2 => item2 !== 'all'))
+        }
+
+        if(activeCat[lastIndex]==='all'&& activeCat.length > 1){
+             setActiveCat(activeCat.filter(item3 => item3 === 'all'))
+        }
+    },[setActiveCat,activeCat])
+
+
+    const slideVariants = {
+        hiddenRight: {
+          x: "100%",
+          opacity: 0,
+        },
+        hiddenLeft: {
+          x: "-100%",
+          opacity: 0,
+        },
+        visible: {
+          x: "0",
+          opacity: 1,
+          transition: {
+            duration: 0.2,
+          },
+        },
+        exit: {
+          opacity: 0,
+          scale: 1,
+          transition: {
+            duration: 0,
+          },
+        },
+      };
+
+      const slidersVariants = {
+        hover: {
+          scale: 1.2,
+        },
+        active: {
+          scale: 1.2,
+          backgroundColor: "#373737",
+        },
+
+      };
+
+    const dotsVariants = {
+        initial: {
+          y: 0,
+        },
+        animate: {
+          y: -10,
+          scale: 1.3,
+          transition: { type: "spring", stiffness: 1000, damping: "10" },
+        },
+        hover: {
+          scale: 1.1,
+          transition: { duration: 0.2 },
+        },
+      };
+  
+
   return (
-    <div name='work' className='w-full h-auto text-black bg-white'>
-        <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-            <div className='pb-8'>
-                <p className='text-4xl font-bold inline border-b-4 text-black border-black'>Portfolio</p>
-                <p className='py-6'> &#47;&#47; Check out some of my recent works</p>
+    <div name='work' className='w-full h-full text-black my-8'>
+        <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full'>
+          <div className='pb-8'>
+
+            <div className='grid md:grid-cols-5 justify-center'>
+              <div className='md:col-span-2'>
+                {/* //*Toggle */}
+                <p className='text-4xl font-bold inline border-b-4 text-black border-black'>Work</p>
+                <p className='py-6 italic text-sm'> &#47;&#47; Check out some of my recent works</p>
+
+                {/* //*Filter */}
+                <div className='my-2'>
+                    <div className='my-2'>Tag Filter:</div>
+                    <button className={activeCat.includes('all')?'mr-2 px-2 border-black border-2 bg-black rounded-lg h-8 capitalize text-white':'mr-2 px-2 drop-shadow text-black bg-white rounded-lg h-8 capitalize hover:bg-[#dddddd] transition-colors'} onClick={()=>handleCat('all')}>show all</button>
+                    {cat.map((item,index)=>
+                    <button id='catId' key={index} className={activeCat.includes(item)?'mr-2 mb-2 px-2 border-black border-2 bg-black rounded-lg h-8 capitalize text-white':'mr-2 mb-2 px-2 drop-shadow text-black bg-white rounded-lg h-8 capitalize hover:bg-[#dddddd] transition-colors'} onClick={()=>handleCat(item)}>{item}</button>)}
+                </div>
+              </div>
+
+              <div className='flex md:inline md:col-span-3'>
+                <div className='relative'>
+                {(slides[currentIndex] && slides[currentIndex].props !== undefined) ?
+                  <SpeechBubble description={slides[currentIndex].props.description} />
+                  : <SpeechBubble description='Hey please select a few tags so you can check out my projects!' />}
+                </div>
+                <div className='human relative flex justify-start self-start'>
+                  <img className='absolute w-[50x] h-[150px] md:-z-[20] md:w-[350px] md:h-[500px] md:-translate-y-[7rem]' src={btp} alt='Human' />
+                </div>
+              </div>
             </div>
 
-    {/* Container */}
-            <div className='grid sm:grid-cols-2 md:cols-3 gap-6'>
+            {/* //*Carousel */}
+            <div className="carousel flex">
+            {/* //? lg:w-[1200px] lg:h-[500px] */}
+              <div className="carousel-images flex relative overflow-hidden p-4">
+                <AnimatePresence>
+                  <motion.div
+                    key={currentIndex}
+                    variants={slideVariants}
+                    initial={direction === "right" ? "hiddenRight" : "hiddenLeft"}
+                    animate="visible"
+                    exit="exit"
+                  >
+                    {slides[currentIndex]}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
 
-                {/* Grid Item */}
-                <div 
-                style={{backgroundImage:`url(${tcu})`}} 
-                className='shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'
-                >
-                    {/* Hover Effects */}
-                    <div className='opacity-0 group-hover:opacity-100 transition-all'>
-                        <span className='pb-2 text-xl font-bold text-black tracking-wider underline underline-offset-2'>
-                        The Conjuring Universe
-                        </span>
-                        <div>
-                            <ul style={{ listStyleType: "disc" }}><span className='font-bold'>Built with:</span>
-                                <li className='cursor-auto'>Next JS</li>
-                                <li className='cursor-auto'>SCSS</li>
-                                <li className='cursor-auto'>Tailwind</li>
-                            </ul>
-                            <br />
-                            <ul style={{ listStyleType: "disc" }}><span className='font-bold'>Libraries used:</span>
-                                <li className='cursor-auto'>Framer Motion</li>
-                                <li className='cursor-auto'>React Scroll</li>
-                                <li className='cursor-auto'>React Scroll Motion</li>
-                            </ul>
-                        </div>
-                    </div>
+            <div className="carousel-indicator flex justify-center gap-5 hover:cursor-pointer mt-2">
+                {slides.map((_, index) => (
+                  <motion.div
+                    key={index}
+                    className={`${currentIndex === index ? "bg-[#f8a0a0]" : "bg-[#818181]"} w-4 h-4 rounded-full`}
+                    onClick={() => handleDotClick(index)}
+                    initial="initial"
+                    animate={currentIndex === index ? "animate" : ""}
+                    whileHover="hover"
+                    variants={dotsVariants}
+                  />
+                ))}
+            </div>
+
+            <div className="scale-[1.10] flex justify-between md:justify-center -translate-y-[8rem] md:self-center md:translate-y-0 mt-4">
+                <div className="pr-4 slide_direction flex col-span-1 md:justify-between md:justify-self-center md:self-center hover:cursor-pointer">
+                  <motion.div
+                    variants={slidersVariants}
+                    whileHover="hover"
+                    className="left block bg-white border-2 border-black pt-2.5 pr-2 pb-2 pl-3 rounded-full relative bottom-0 h-12 w-12 drop-shadow-lg transition active:bg-black"
+                    onClick={handlePrevious}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="20"
+                      viewBox="0 0 560 960"
+                      width="20"
+                    >
+                      <path d="M400 976 0 576l400-400 56 57-343 343 343 343-56 57Z" />
+                    </svg>
+                  </motion.div>
                 </div>
-                <div className='rounded-3xl border-2 border-black p-5'>
-                    <h2 className='text-2xl font-bold pb-5'>The Conjuring Universe</h2>
-                    <p>The Conjuring Universe is a simplified fandom website targetting users to find out information of the America media franchise -- The Conjuring Universe.</p>
-                    <br />
-                    <p className='text-[0.8rem] text-gray-500'>*The website consists NO jumpscares or any form of scaring elements.</p>
-                    <br></br>
-                    <div className=''><span className='font-bold py-2'>Video Demo:</span>
-                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-b-2 transition-all' href='https://drive.google.com/file/d/1HD_1z-cgEs-yU2WW0JxmqtzTLSDikS_t/view?usp=sharing'>&nbsp;Desktop</a>|
-                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-b-2 transition-all' href='https://drive.google.com/file/d/1ghqqHJK7Jz8SiME3vvx28XRd5obd32LX/view?usp=sharing'>&nbsp;Mobile</a>
-                    </div>
-                    <div className='mt-4'>
-                        <a className="mr-4 py-2 px-3 rounded-lg text-2xl bg-[#ffdede] border-4 border-[#ffdede] hover:border-black hover:border-4 hover:animate-none transition-all
-                        after:content-[''] after:absolute after:border-green-500 after:bg-green-500 after:border-4 after:rounded-full after:w-2 after:h-2 after:animate-ping
-                        before:content-[''] before:absolute before:translate-x-[2.8rem] before:border-green-500 before:bg-green-500 before:border-4 before:rounded-full before:w-2 before:h-2" href='https://the-conjuring-universe-for-noobs.vercel.app/'>
-                        Live</a>
-                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/the-conjuring-universe-for-noobs'>Github</a>
-                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/the-conjuring-universe-for-noobs/blob/main/README.md'>Documentation</a>
-                    </div>
-                </div>
-
-
-                {/* Grid Item */}
-                <div 
-                style={{backgroundImage:`url(${tcb})`}} 
-                className='shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'
-                >
-                    {/* Hover Effects */}
-                    <div className='opacity-0 group-hover:opacity-100 transition-all'>
-                        <span className='pb-2 text-xl font-bold text-black tracking-wider underline underline-offset-2'>
-                        The Chicken Bros
-                        </span>
-                        <div>
-                            <ul style={{ listStyleType: "disc" }}><span className='font-bold'>Built with:</span>
-                            <div className='grid grid-cols-2'>
-                                <div>
-                                    <li className='cursor-auto'>React JS</li>
-                                    <li className='cursor-auto'>SCSS</li>
-                                    <li className='cursor-auto'>Tailwind</li>
-                                </div>
-                                <div>
-                                    <li className='cursor-auto'>Material UI</li>
-                                </div>
-                            </div>
-                                
-                            </ul>
-                            <br />
-                            <ul style={{ listStyleType: "disc" }}><span className='font-bold'>Libraries used:</span>
-                                <div className='grid grid-cols-2'>
-                                    <div>
-                                        <li className='cursor-auto'>AOS</li>
-                                        <li className='cursor-auto'>React Icons</li>
-                                        <li className='cursor-auto'>React Scroll</li>
-                                        <li className='cursor-auto'>Lottie Web</li>
-                                    </div>
-                                    <div>
-                                        <li className='cursor-auto'>E-Commerce JS</li>
-                                        <li className='cursor-auto'>Stripe</li>
-                                    </div>
-                                </div>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='rounded-3xl border-2 border-black p-5'>
-                <h2 className='text-2xl font-bold pb-5'>The Chicken Bros</h2>
-                    <p>The Chicken Bros is an art website with e-commorce implemented. Most of the assets are created with Photoshop / After Effects.</p>
-                    <br></br>
-                    <div className=''><span className='font-bold py-2'>Video Demo:</span>
-                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-b-2 transition-all' href='https://drive.google.com/file/d/1O4zN3cLSGZ1v3jYRYEUpHurJ-fzaoVog/view?usp=sharing'>&nbsp;Desktop</a>
-                    </div>
-                    <div className='mt-4'>
-                        <a className="mr-4 py-2 px-3 rounded-lg text-2xl bg-[#ffdede] border-4 border-[#ffdede] hover:border-black hover:border-4 hover:animate-none transition-all
-                        after:content-[''] after:absolute after:border-green-500 after:bg-green-500 after:border-4 after:rounded-full after:w-2 after:h-2 after:animate-ping
-                        before:content-[''] before:absolute before:translate-x-[2.8rem] before:border-green-500 before:bg-green-500 before:border-4 before:rounded-full before:w-2 before:h-2" href='https://the-chicken-bros.vercel.app/'>
-                        Live</a>
-
-                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/the-chicken-bros'>Github</a>
-                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/the-chicken-bros/blob/main/README.md'>Documentation</a>
-                    </div>
-                </div>
-
-                {/* Grid Item */}
-                <div 
-                style={{backgroundImage:`url(${rps})`}} 
-                className='shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'
-                >
-                    {/* Hover Effects */}
-                    <div className='opacity-0 group-hover:opacity-100 transition-all'>
-                        <span className='pb-2 text-xl font-bold text-black tracking-wider underline underline-offset-2'>
-                        Rock, Paper, Scissors
-                        </span>
-                        <div>
-                            <ul style={{ listStyleType: "disc" }}><span className='font-bold'>Built with:</span>
-                            <div className='grid grid-cols-2'>
-                                <div>
-                                    <li className='cursor-auto'>React JS</li>
-                                    <li className='cursor-auto'>Tailwind</li>
-                                    <li className='cursor-auto'>Illustrator</li>
-                                </div>
-                            </div>
-                                
-                            </ul>
-                            <br />
-                            <ul style={{ listStyleType: "disc" }}><span className='font-bold'>Libraries used:</span>
-                                <div className='grid grid-cols-2'>
-                                    <div>
-                                        <li className='cursor-auto'>Framer Motion</li>
-                                    </div>
-                                </div>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='rounded-3xl border-2 border-black p-5'>
-                <h2 className='text-2xl font-bold pb-5'>Rock, Paper, Scissors</h2>
-                    <p>A mini game with the grandpa character as your opponent, win 5 games to beat grandpa!</p>
-                    <br></br>
-                    {/* <div className=''><span className='font-bold py-2'>Video Demo:</span>
-                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-b-2 transition-all' href='https://drive.google.com/file/d/1O4zN3cLSGZ1v3jYRYEUpHurJ-fzaoVog/view?usp=sharing'>&nbsp;Desktop</a>
-                    </div> */}
-                    <div className='mt-4'>
-                        <a className="mr-4 py-2 px-3 rounded-lg text-2xl bg-[#ffdede] border-4 border-[#ffdede] hover:border-black hover:border-4 hover:animate-none transition-all
-                        after:content-[''] after:absolute after:border-green-500 after:bg-green-500 after:border-4 after:rounded-full after:w-2 after:h-2 after:animate-ping
-                        before:content-[''] before:absolute before:translate-x-[2.8rem] before:border-green-500 before:bg-green-500 before:border-4 before:rounded-full before:w-2 before:h-2" href='https://rock-paper-scissors-zeta-one.vercel.app/'>
-                        Live</a>
-
-                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/rock-paper-scissors'>Github</a>
-                        {/* <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/the-chicken-bros/blob/main/README.md'>Documentation</a> */}
-                    </div>
-                </div>
-
-                {/* Grid Item */}
-                <div 
-                className='group container rounded-md flex justify-center items-center mx-auto content-div2'
-                >
-                    <div className='flex justify-center self-center p-4 whitespace-nowrap text-2xl'>Other mini projects:</div>
-
-                </div>
-
-                <div className='rounded-3xl border-2 border-black p-5'>
-                    <h2 className='text-xl font-bold pb-5'>Pricing Component with toggle</h2>
-                    <div className=''>
-                        <a className="mr-4 py-1 px-2 rounded-lg text-xl bg-[#ffdede] border-4 border-[#ffdede] hover:border-black hover:border-4 hover:animate-none transition-all
-                        after:content-[''] after:absolute after:border-green-500 after:bg-green-500 after:border-4 after:rounded-full after:w-2 after:h-2 after:animate-ping
-                        before:content-[''] before:absolute before:translate-x-[2.4rem] before:border-green-500 before:bg-green-500 before:border-4 before:rounded-full before:w-2 before:h-2" href='https://tengxuanp.github.io/pricing-component-with-toggle-master/'>
-                        Live</a>
-                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/pricing-component-with-toggle-master'>Github</a>
-                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/pricing-component-with-toggle-master/blob/main/README.md'>Documentation</a>
-                    </div>
-                    <br />
-                    <div className='flex border-[1px] border-black mb-1'></div>
-                    <h2 className='text-xl font-bold pb-5'>FAQ Accordion Card</h2>
-                    <div className=''>
-                        <a className="mr-4 py-1 px-2 rounded-lg text-xl bg-[#ffdede] border-4 border-[#ffdede] hover:border-black hover:border-4 hover:animate-none transition-all
-                        after:content-[''] after:absolute after:border-green-500 after:bg-green-500 after:border-4 after:rounded-full after:w-2 after:h-2 after:animate-ping
-                        before:content-[''] before:absolute before:translate-x-[2.4rem] before:border-green-500 before:bg-green-500 before:border-4 before:rounded-full before:w-2 before:h-2" href='https://tengxuanp.github.io/faq-accordion-card/'>
-                        Live</a>
-                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/faq-accordion-card'>Github</a>
-                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/faq-accordion-card/blob/main/README.md'>Documentation</a>
-                    </div>
-                    <br />
-                    <div className='flex border-[1px] border-black mb-1'></div>
-                    <h2 className='text-xl font-bold pb-5'>Interactive Rating Component</h2>
-                    <div className=''>
-                        <a className="mr-4 py-1 px-2 rounded-lg text-xl bg-[#ffdede] border-4 border-[#ffdede] hover:border-black hover:border-4 hover:animate-none transition-all
-                        after:content-[''] after:absolute after:border-green-500 after:bg-green-500 after:border-4 after:rounded-full after:w-2 after:h-2 after:animate-ping
-                        before:content-[''] before:absolute before:translate-x-[2.4rem] before:border-green-500 before:bg-green-500 before:border-4 before:rounded-full before:w-2 before:h-2" href='https://tengxuanp.github.io/interactive-rating-component/'>
-                        Live</a>
-                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/interactive-rating-component'>Github</a>
-                        <a className='mr-2 border-[#ffdede] border-b-2 hover:border-black hover:border-y-4 transition-all' href='https://github.com/tengxuanp/interactive-rating-component/blob/main/README.md'>Documentation</a>
-                    </div>
+                
+                <div className="pl-4 slide_direction col-span-1 justify-self-start self-center hover:cursor-pointer">
+                  <motion.div
+                    variants={slidersVariants}
+                    whileHover="hover"
+                    className="right block bg-white border-2 border-black pt-2.5 pr-2 pb-2 pl-3 rounded-full relative bottom-0 h-12 w-12 drop-shadow-lg transition active:bg-black"
+                    onClick={handleNext}
+                    >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="20"
+                      viewBox="0 0 560 960"
+                      width="20"
+                    >
+                      <path d="m304 974-56-57 343-343-343-343 56-57 400 400-400 400Z" />
+                    </svg>
+                  </motion.div>
                 </div>
 
             </div>
+
+            {/* //?<Sidebar workInfo={workInfo} /> */}
+          </div>
+
+          {/* //?<WorkCard workInfo={workInfo} /> */}
+
         </div>
     </div>
   )

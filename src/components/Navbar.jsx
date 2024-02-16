@@ -10,7 +10,7 @@ const Navbar = () => {
     const handleClick = () => setNav(!nav)
 
   return (
-    <div className='fixed z-50 w-full h-[50px] flex justify-between items-center px-4 bg-white border-y-8 border-[#ffdede]'>
+    <div className='fixed z-[990] w-full h-[50px] flex justify-between items-center px-4 bg-white border-y-8 border-[#ffdede]'>
     {/* F6EEEE */}
         <div className='cursor-pointer'>
         <Link to="home" smooth={true} duration={500}>
@@ -19,33 +19,33 @@ const Navbar = () => {
         </div>
 
         {/* Menu */}
-            <ul className='hidden md:flex'>
-                <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
-                <Link to="home" smooth={true} duration={500}>
-                Home
-                </Link>    
-                </li>
-                <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
-                <Link to="about" smooth={true} duration={500}>
-                About
-                </Link>     
-                </li>
-                <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
-                <Link to="skills" smooth={true} duration={500}>
-                Skills
-                </Link>     
-                </li>
-                <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
-                <Link to="work" smooth={true} duration={500}>
-                Portfolio
-                </Link>     
-                </li>
-                <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
-                <Link to="contact" smooth={true} duration={500}>
-                Contact
-                </Link>     
-                </li>
-            </ul>
+        <ul className='hidden md:flex'>
+            <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
+            <Link to="home" smooth={true} duration={500}>
+            Home
+            </Link>    
+            </li>
+            {/* <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
+            <Link to="skills" smooth={true} duration={500}>
+            Skills
+            </Link>     
+            </li> */}
+            <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
+            <Link to="work" smooth={true} duration={500}>
+            Portfolio
+            </Link>     
+            </li>
+            <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
+            <Link to="about" smooth={true} duration={500}>
+            About
+            </Link>     
+            </li>
+            <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
+            <Link to="contact" smooth={true} duration={500}>
+            Contact
+            </Link>     
+            </li>
+        </ul>
 
         {/* Hamburger */}
         <div onClick={handleClick} className='md:hidden z-10'>
@@ -82,7 +82,7 @@ const Navbar = () => {
         </ul>
 
         {/* Social icons */}
-        <div className='hidden lg:flex fixed flex-col top-[65%] left-0'>
+        {/* <div className='hidden lg:flex fixed flex-col top-[65%] left-0'>
         <ul>
             <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-500'>
                 <a className='flex justify-between items-center w-full text-gray-300' 
@@ -110,7 +110,7 @@ const Navbar = () => {
             </li>
 
         </ul>
-        </div>
+        </div> */}
     </div>
   )
 }
