@@ -190,7 +190,7 @@ const Work = () => {
                 <div className='relative'>
                 {(slides[currentIndex] && slides[currentIndex].props !== undefined) ?
                   <SpeechBubble description={slides[currentIndex].props.description} />
-                  : <SpeechBubble description='Hey please select a few tags so you can check out my projects!' />}
+                  : <SpeechBubble description='Hey, please select a few tags so you can check out my projects!' />}
                 </div>
                 <div className='human relative flex justify-start self-start'>
                   <img className='absolute w-[50x] h-[150px] md:-z-[20] md:w-[350px] md:h-[500px] md:-translate-y-[7rem]' src={btp} alt='Human' />
