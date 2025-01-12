@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import Work from "./components/Work";
 import Scenery from "./components/Scenery";
 import Cert from "./components/Cert";
+import Journey from "./components/Journey";
 
 function App() {
 
@@ -21,9 +22,10 @@ function App() {
       <About />
       <Skills />
       <Cert />
+      <Journey />
       <Contact />
       
-      <div className="flex justify-center self-center">©️ 2024 Rafael Pang. All Rights Reserved</div>
+      <div className="flex justify-center self-center">©️ 2025 Rafael Pang. All Rights Reserved</div>
     </div>
   );
 }
