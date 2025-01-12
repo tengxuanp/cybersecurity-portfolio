@@ -15,9 +15,10 @@ function App() {
       <Home />
       
       <Work />
-      {/* <Skills /> */}
+
       <Scenery />
       <About />
+      <Skills />
       <Contact />
       
       <div className="flex justify-center self-center">©️ 2024 Rafael Pang. All Rights Reserved</div>
