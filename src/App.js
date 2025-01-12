@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Skills from "./components/Skills";
 import Work from "./components/Work";
 import Scenery from "./components/Scenery";
+import Cert from "./components/Cert";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <Scenery />
       <About />
       <Skills />
+      <Cert />
       <Contact />
       
       <div className="flex justify-center self-center">©️ 2024 Rafael Pang. All Rights Reserved</div>
