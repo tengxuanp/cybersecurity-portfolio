@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/cybersecurity-portfolio/static/css/main.71b3eab4.css",
+    "main.js": "/cybersecurity-portfolio/static/js/main.d4755e3e.js",
+    "static/media/profile.jpg": "/cybersecurity-portfolio/static/media/profile.5be234f0ef0c9dc8f3aa.jpg",
+    "static/media/btp.png": "/cybersecurity-portfolio/static/media/btp.e7d83a79b7c6c4e4696b.png",
+    "static/media/scene.png": "/cybersecurity-portfolio/static/media/scene.33454f1dbbf98fe0872b.png",
+    "static/media/cupid.png": "/cybersecurity-portfolio/static/media/cupid.c70f0044ff4ec1019051.png",
+    "static/media/tcu.jpg": "/cybersecurity-portfolio/static/media/tcu.ec8f4c2342c8b8002fee.jpg",
+    "static/media/tcb.jpg": "/cybersecurity-portfolio/static/media/tcb.d1ae048f688cdcd8bcb3.jpg",
+    "static/media/default_preview.png": "/cybersecurity-portfolio/static/media/default_preview.127d5e71f9a29ccff9f9.png",
+    "static/media/cdsa.jpg": "/cybersecurity-portfolio/static/media/cdsa.966198b12084de6f5e31.jpg",
+    "static/media/ISO27001.jpg": "/cybersecurity-portfolio/static/media/ISO27001.83ea4b1c3b3c20bce96b.jpg",
+    "static/media/analyst.jpg": "/cybersecurity-portfolio/static/media/analyst.6179785d5d3d03494ea4.jpg",
+    "static/media/rps.jpg": "/cybersecurity-portfolio/static/media/rps.39ff6a911a1670ca641a.jpg",
+    "static/media/autopsy.png": "/cybersecurity-portfolio/static/media/autopsy.417b37cdadce9b4505a4.png",
+    "static/media/chucky.jpg": "/cybersecurity-portfolio/static/media/chucky.8c701c77b1fb620c1e8d.jpg",
+    "static/media/react.png": "/cybersecurity-portfolio/static/media/react.0cf951a69d8e58f83f9d.png",
+    "static/media/react_p.png": "/cybersecurity-portfolio/static/media/react_p.f8531217dce6da48c224.png",
+    "static/media/node_p.png": "/cybersecurity-portfolio/static/media/node_p.5add9f7471dc2b46ac46.png",
+    "static/media/photoshop.png": "/cybersecurity-portfolio/static/media/photoshop.9bb8e3acbfce11124d90.png",
+    "static/media/tailwind_p.png": "/cybersecurity-portfolio/static/media/tailwind_p.04b73bc8c0199f1b3671.png",
+    "static/media/tailwind.png": "/cybersecurity-portfolio/static/media/tailwind.e47ac876b8d4d0bba47a.png",
+    "static/media/splunk.png": "/cybersecurity-portfolio/static/media/splunk.6b30bcb0cc0720102722.png",
+    "static/media/redux_p.png": "/cybersecurity-portfolio/static/media/redux_p.0ad4210eb81503779118.png",
+    "static/media/sql.png": "/cybersecurity-portfolio/static/media/sql.d4439ea811dc1e04887a.png",
+    "static/media/javascript.png": "/cybersecurity-portfolio/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
+    "static/media/send_email.png": "/cybersecurity-portfolio/static/media/send_email.9203b3d373f7180692c5.png",
+    "index.html": "/cybersecurity-portfolio/index.html",
+    "main.71b3eab4.css.map": "/cybersecurity-portfolio/static/css/main.71b3eab4.css.map",
+    "main.d4755e3e.js.map": "/cybersecurity-portfolio/static/js/main.d4755e3e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.71b3eab4.css",
+    "static/js/main.d4755e3e.js"
+  ]
+}
