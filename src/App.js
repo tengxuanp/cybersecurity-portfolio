@@ -23,10 +23,10 @@ function App() {
 
       <Scenery />
       <About />
-      <Skills />
-      <Cert />
-      <Journey />
-      <Aspiration />
+      {/* <Skills /> */}
+      {/* <Cert /> */}
+      {/* <Journey /> */}
+      {/* <Aspiration /> */}
       <Contact />
       
       <div className="flex justify-center self-center">©️ 2025 Rafael Pang. All Rights Reserved</div>

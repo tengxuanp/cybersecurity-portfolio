@@ -148,11 +148,11 @@ const About = () => {
                 whileInView={'animate'}
                 className=" bg-white inline-block p-4 border-4 border-black rounded-md">
                     <p className="p-2 mb-4 text-3xl text-black rounded-lg ">Hi. I'm <span className="text-5xl border-b-4 border-[#ffc8c8] underline underline-offset-4">Rafael Pang</span>, </p>
-                    <p className="text-3xl text-black drop-shadow-sm">Please take a moment to explore.</p>
+                    <p className="text-3xl text-black drop-shadow-sm">Please take a moment to explore my site.</p>
                 </motion.div>
                 <br /><br />
                 <div className="flex justify-center self-center text-xl">
-                  <p className={passion ? 'font-bold' : 'text-gray-300'}>Verbose <br /> Passion</p>
+                  <p className={passion ? 'font-bold' : 'text-gray-300'}>Verbose <br /> Introduction</p>
                   <div className='inline-flex justify-center self-center bg-gray-300 rounded-xl drop-shadow-lg shadow-inner inset-4 mb-10 scale-50 translate-y-[-1.3rem] cursor-pointer' onClick={()=>setPassion(!passion)}>
                     <div className={passion ? 'w-[160px] h-[100px] flex justify-start rounded-full p-[10px] min-w-[160px] ' : 'w-[160px] h-[100px] flex justify-end rounded-[50px] p-[10px] min-w-[160px]'}>
                       <motion.div className="handle w-[80px] h-[80px] bg-white rounded-full shadow-inner inset-2" layout transition={spring} />
@@ -164,15 +164,14 @@ const About = () => {
                 <div className='flex justify-center self-center'>
                 <div className="translate-y-[-2rem] p-4 h-[10rem] w-[30rem]">
                 {passion? 
-                  <p className=" text-black max-w-xl text-left first-letter:text-5xl first-letter:mr-3 first-letter:float-left">I am a front-end developer with a strong passion for crafting 
-                  innovative software and creating visually appealing artworks. To me, the web is a canvas for artistic expression, offering a remarkable platform to showcase creativity.
-                      <br /> <br /> 
-                      Currently, I am actively seeking an opportunity to broaden my expertise in web development and enhance my skills in art design. My goal is to evolve into a well-rounded developer who seamlessly combines technical proficiency with a keen artistic sensibility. By continuously expanding my knowledge and skill set, I aim to contribute to the development of captivating and immersive digital experiences.
+                  <p className=" text-black max-w-xl text-left first-letter:text-5xl first-letter:mr-3 first-letter:float-left">I am an aspiring Penetration Tester with a Master’s in Cybersecurity and over 4 years of technical experience across frontend development and IT infrastructure. While I began my career crafting digital experiences, I have shifted my focus to cybersecurity, driven by a passion for safeguarding digital assets and combating cyber threats. <br /> <br />
+                      <br />
+                      I am an active CTF competitor and Hack The Box user, currently ranked in the top 11% globally (1011/9850) for Season 9. I am always committed to continuous growth through industry-recognized certifications.
                   </p>
                 :
                   <p className="p-4 text-black max-w-1 text-justify rounded-lg">
-                    <span className='font-bold'>Full Name:</span> Rafael Teng Xuan, Pang <br />
-                    <span className='font-bold'>Age <span onClick={()=>(setShowAgeDetail(!showAgeDetail))} className='text-xs italic cursor-pointer text-right hover:underline transition'>{showAgeDetail?`collapse`:`in detail`}</span> :</span> {showAgeDetail?(<span>{`${age.years} years ${age.months} months ${age.days} days ${age.hours} hours ${age.minutes} minutes ${age.seconds} seconds old.`}</span>):(<span>27 years old</span>)} <br /> 
+                    <span className='font-bold'>Name:</span> Rafael Pang TX<br />
+                    <span className='font-bold'>Age <span onClick={()=>(setShowAgeDetail(!showAgeDetail))} className='text-xs italic cursor-pointer text-right hover:underline transition'>{showAgeDetail?`collapse`:`in detail`}</span> :</span> {showAgeDetail?(<span>{`${age.years} years ${age.months} months ${age.days} days ${age.hours} hours ${age.minutes} minutes ${age.seconds} seconds old.`}</span>):(<span>29 years old</span>)} <br /> 
                     <span className='font-bold'>Gender:</span> Male<br /> 
                     <span className='font-bold'>Nationality:</span> Malaysian<br />
                   </p>
