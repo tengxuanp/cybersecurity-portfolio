@@ -82,7 +82,13 @@ const Badge = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [direction, setDirection] = useState('left')
 
-    // Create slides from filtered badges
+    // Swipe detection constants
+    const swipeConfidenceThreshold = 10000;
+    const swipePower = (offset, velocity) => {
+        return Math.abs(offset) * velocity;
+    };
+
+    // ...existing code...
     const filteredBadges = activeCategories.includes('all') 
       ? badgesData 
       : badgesData.filter(badge => 
@@ -239,8 +245,8 @@ const Badge = () => {
                     </div>
 
                     {/* Carousel */}
-                    <div className="carousel flex">
-                        <div className="carousel-images flex relative overflow-hidden p-4">
+                    <div className="carousel flex relative">
+                        <div className="carousel-images flex relative overflow-hidden p-4 w-full">
                             <AnimatePresence>
                                 <motion.div
                                     key={currentIndex}
@@ -248,14 +254,58 @@ const Badge = () => {
                                     initial={direction === "right" ? "hiddenRight" : "hiddenLeft"}
                                     animate="visible"
                                     exit="exit"
+                                    drag="x"
+                                    dragConstraints={{ left: 0, right: 0 }}
+                                    dragElastic={1}
+                                    onDragEnd={(e, { offset, velocity }) => {
+                                        const swipe = swipePower(offset.x, velocity.x);
+                                        if (swipe < -swipeConfidenceThreshold) {
+                                            handleNext();
+                                        } else if (swipe > swipeConfidenceThreshold) {
+                                            handlePrevious();
+                                        }
+                                    }}
                                 >
                                     {slides[currentIndex]}
                                 </motion.div>
                             </AnimatePresence>
                         </div>
+
+                        {/* Navigation Arrows - positioned on the sides of carousel */}
+                        <motion.div
+                            variants={slidersVariants}
+                            whileHover="hover"
+                            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-3 drop-shadow-lg transition active:bg-black hover:cursor-pointer z-10"
+                            onClick={handlePrevious}
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="20"
+                                viewBox="0 0 560 960"
+                                width="20"
+                            >
+                                <path d="M400 976 0 576l400-400 56 57-343 343 343 343-56 57Z" />
+                            </svg>
+                        </motion.div>
+
+                        <motion.div
+                            variants={slidersVariants}
+                            whileHover="hover"
+                            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-3 drop-shadow-lg transition active:bg-black hover:cursor-pointer z-10"
+                            onClick={handleNext}
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="20"
+                                viewBox="0 0 560 960"
+                                width="20"
+                            >
+                                <path d="m304 974-56-57 343-343-343-343 56-57 400 400-400 400Z" />
+                            </svg>
+                        </motion.div>
                     </div>
 
-                    <div className="carousel-indicator flex justify-center gap-5 hover:cursor-pointer mt-2">
+                    <div className="carousel-indicator flex justify-center gap-5 hover:cursor-pointer mt-4">
                         {slides.map((_, index) => (
                             <motion.div
                                 key={index}
@@ -268,7 +318,7 @@ const Badge = () => {
                             />
                         ))}
                     </div>
-
+{/* 
                     <div className="scale-[1.10] flex justify-between md:justify-center -translate-y-[8rem] md:self-center md:translate-y-0 mt-4">
                         <div className="pr-4 slide_direction flex col-span-1 md:justify-between md:justify-self-center md:self-center hover:cursor-pointer">
                             <motion.div
@@ -305,7 +355,7 @@ const Badge = () => {
                                 </svg>
                             </motion.div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
