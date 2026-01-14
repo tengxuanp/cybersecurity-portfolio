@@ -11,7 +11,7 @@ const Contact = () => {
         <div className='border-2 border-black border-dashed rounded-full text-xl bg-[#ffada8] pr-8 py-2 cursor-pointer -mr-8 ml-8 hover:-mr-5 hover:ml-5 transition-all'><a href={`mailto:${emailAddress}`}>Email</a></div>
         <div className='border-2 border-black border-dashed rounded-full text-xl bg-[#91ff76] -mt-1 pr-8 py-2 cursor-pointer -mr-8 ml-8 hover:-mr-5 hover:ml-5 transition-all'><a href='https://www.linkedin.com/in/rafael-pang-tx/' target="_blank">LinkedIn</a></div>
         <div className='border-2 border-black border-dashed rounded-full text-xl bg-[#76cdff] -mt-1 pr-8 py-2 cursor-pointer -mr-8 ml-8 hover:-mr-5 hover:ml-5 transition-all'><a href='https://github.com/tengxuanp' target="_blank">Github</a></div>
-        <div className='border-2 border-black border-dashed rounded-full text-xl bg-[#f991f6] -mt-1 pl-4 pr-8 py-2 cursor-pointer -mr-8 ml-8 hover:-mr-5 hover:ml-5 transition-all'><a href='/resume.pdf' target="_blank" download>Résumé</a></div>
+        {/* <div className='border-2 border-black border-dashed rounded-full text-xl bg-[#f991f6] -mt-1 pl-4 pr-8 py-2 cursor-pointer -mr-8 ml-8 hover:-mr-5 hover:ml-5 transition-all'><a href='/resume.pdf' target="_blank" download>Résumé</a></div> */}
       </div>
         <form 
           method='POST' action="https://getform.io/f/4338ed21-dc0a-424f-a738-3a7e8cceb3be" 
