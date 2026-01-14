@@ -26,6 +26,11 @@ const Navbar = () => {
             </Link>    
             </li>
             <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
+            <Link to="badges" smooth={true} duration={500}>
+            Badges
+            </Link>     
+            </li>
+            <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
             <Link to="work" smooth={true} duration={500}>
             Portfolio
             </Link>     
@@ -58,6 +63,11 @@ const Navbar = () => {
             <Link onClick={handleClick} to="home" smooth={true} duration={500}>
             Home
             </Link> 
+            </li>
+            <li className='py-6 text-3xl hover:bg-black hover:text-white rounded-lg transition-colors'>
+            <Link onClick={handleClick} to="badges" smooth={true} duration={500}>
+            Badges
+            </Link>     
             </li>
             <li className='py-6 text-3xl hover:bg-black hover:text-white rounded-lg transition-colors'>
             <Link onClick={handleClick} to="work" smooth={true} duration={500}>

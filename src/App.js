@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Skills from "./components/Skills";
 import Work from "./components/Work";
 import Scenery from "./components/Scenery";
-import Cert from "./components/Cert";
+import Badge from "./components/Badge";
 import Journey from "./components/Journey";
 import Aspiration from "./components/Aspiration";
 import Posts from "./components/Posts";
@@ -17,14 +17,14 @@ function App() {
     <div className="border-x-8 border-[#ffdede] z-[9999]">
       <Navbar />
       <Home />
-      
-      <Work />
+      <Badge />
+      {/* <Work /> */}
       <Posts />
 
       <Scenery />
       <About />
       {/* <Skills /> */}
-      {/* <Cert /> */}
+      
       {/* <Journey /> */}
       {/* <Aspiration /> */}
       <Contact />
