@@ -1,51 +1,51 @@
 [
 
   {
-    "id": 2,
+    "id": 1,
     "name": "HTB Certified Defensive Security Analyst (CDSA)",
     "category": "Defensive Security",
-    "description": "Hack The Box's CDSA certification demonstrates expertise in deploying, configuring, and managing the HTB Falcon platform. Validates skills in endpoint detection and response, threat hunting, and incident response.",
+    "description": "This was my first real dive into the security world, and it was brutal. I survived on minimal sleep during that 7-day exam marathon, but I pushed through and delivered two commercial-grade reports to pass. It taught me as much about mental endurance as it did about defensive security",
     "skillsTags": ["Endpoint Detection", "Threat Hunting", "Incident Response", "SIEM", "Malware Analysis"],
-    "credentialUrl": "https://www.credly.com/badges/crowdstrike-certified-falcon-administrator",
+    "credentialUrl": "https://www.credly.com/earner/earned/badge/bf0e2272-6829-42c8-90fd-70dec5857aec",
     "imagePath": "badge/cdsa_badge.png",
-    "issuer": "CrowdStrike",
-    "dateEarned": "2024-02-20",
-    "expiryDate": "2026-02-20"
+    "issuer": "Hack The Box",
+    "dateEarned": "2024-06-21",
+    "expiryDate": "-"
+  },
+  {
+    "id": 2,
+    "name": "Junior Penetration Tester (eJPT)",
+    "category": "Penetration Testing",
+    "description": "I took this as a warm-up for the OSCP. To make it interesting, I treated it like the OSCP by self-imposing OSCP rules: no AI help and a strict 24-hour limit. I’m happy to say I cleared it within that window, which gave me a some confidence boost for my upcoming exams.",
+    "skillsTags": ["Penetration Testing", "Network Assessment", "Web Application Security", "Vulnerability Assessment", "Exploitation"],
+    "credentialUrl": "https://certs.ine.com/422a0d2d-361f-4442-9bad-61d264e3c06f",
+    "imagePath": "badge/ejpt_badge.png",
+    "issuer": "INE",
+    "dateEarned": "2026-01-09",
+    "expiryDate": "2029-01-09"
   },
   {
     "id": 3,
-    "name": "eLearnSecurity Junior Penetration Tester (eJPT)",
-    "category": "Penetration Testing",
-    "description": "eJPT certification validates practical penetration testing skills including network security assessment, web application testing, and vulnerability analysis. Hands-on certification with real-world scenarios.",
-    "skillsTags": ["Penetration Testing", "Network Assessment", "Web Application Security", "Vulnerability Assessment", "Exploitation"],
-    "credentialUrl": "https://www.elearnsecurity.com/certification/ejpt/",
-    "imagePath": "badge/ejpt_badge.png",
-    "issuer": "eLearnSecurity",
-    "dateEarned": "2024-01-10",
-    "expiryDate": "2027-01-10"
-  },
-  {
-    "id": 1,
     "name": "Certified in Cybersecurity (CC)",
     "category": "Cybersecurity",
-    "description": "ISC2 Certified in Cybersecurity certification validates foundational knowledge in cybersecurity principles and practices. Covers security principles, business continuity, access controls, security operations, and network security.",
+    "description": "Since this one was free, I figured why not. I just booked a slot, walked into the testing center, and knocked it out. It’s a solid way to validate the IT fundamentals I’ve picked up over the years.",
     "skillsTags": ["Security Principles", "Access Control", "Network Security", "Security Operations", "Risk Management"],
-    "credentialUrl": "https://www.credly.com/badges/cc-certified-in-cybersecurity",
+    "credentialUrl": "https://www.credly.com/earner/earned/badge/a2d9a783-6094-43c9-9e82-3b5e7cbe999e",
     "imagePath": "badge/cc_badge.png",
     "issuer": "ISC2",
-    "dateEarned": "2024-03-15",
-    "expiryDate": "2027-03-15"
+    "dateEarned": "2025-11-01",
+    "expiryDate": "2028-11-01"
   },
   {
     "id": 4,
-    "name": "AWS Certified Cloud Practitioner (COA)",
-    "category": "Cloud Security",
-    "description": "AWS Cloud Practitioner certification demonstrates foundational knowledge of AWS cloud services, security, and compliance. Validates understanding of AWS global infrastructure, core services, and basic security practices.",
-    "skillsTags": ["Cloud Security", "AWS Services", "Infrastructure", "Compliance", "Cost Management"],
-    "credentialUrl": "https://www.credly.com/badges/aws-certified-cloud-practitioner",
+    "name": "Cisco CyberOps Associate (CCOA)",
+    "category": "Networking",
+    "description": "I picked this one up while working on my Master’s. Since it was already part of my course syllabus, it served as a great deep-dive revision into networking.",
+    "skillsTags": ["Security Operations", "Incident Response", "Network Security", "Threat Intelligence", "Security Monitoring"],
+    "credentialUrl": "https://www.credly.com/earner/earned/badge/06856162-2f13-4c11-9a9b-4bf16bc0062d",
     "imagePath": "badge/coa_badge.png",
-    "issuer": "Amazon Web Services",
-    "dateEarned": "2023-11-30",
-    "expiryDate": "2026-11-30"
+    "issuer": "Cisco",
+    "dateEarned": "2025-06-01",
+    "expiryDate": "-"
   }
 ]

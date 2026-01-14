@@ -39,9 +39,9 @@ const BadgeSlide = ({ id, name, category, description, skillsTags, credentialUrl
           <p className="text-xs text-gray-500">{category}</p>
         </div>
         
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <p className="text-gray-700 text-sm leading-relaxed">{description}</p>
-        </div>
+        </div> */}
         
         <div className="mb-4">
           <h4 className="text-sm font-semibold text-gray-800 mb-2">Skills Validated:</h4>
@@ -66,7 +66,7 @@ const BadgeSlide = ({ id, name, category, description, skillsTags, credentialUrl
         
         <button 
           onClick={handleVerifyClick}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
+          className="w-full shadow-lg  drop-shadow-sm text-black  hover:bg-[#f8a0a0] hover:text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
         >
           Verify Credential
         </button>
@@ -244,9 +244,9 @@ const Badge = () => {
                         </div>
                     </div>
 
-                    {/* Carousel */}
-                    <div className="carousel flex relative">
-                        <div className="carousel-images flex relative overflow-hidden p-4 w-full">
+                    {/* Carousel - centered horizontally */}
+                    <div className="carousel flex justify-center relative">
+                        <div className="carousel-images flex relative overflow-hidden p-4 w-full max-w-2xl">
                             <AnimatePresence>
                                 <motion.div
                                     key={currentIndex}
@@ -275,7 +275,7 @@ const Badge = () => {
                         <motion.div
                             variants={slidersVariants}
                             whileHover="hover"
-                            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-3 drop-shadow-lg transition active:bg-black hover:cursor-pointer z-10"
+                            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white border-2 border-black rounded-full p-3 drop-shadow-lg transition active:bg-black hover:cursor-pointer z-10"
                             onClick={handlePrevious}
                         >
                             <svg
@@ -291,7 +291,7 @@ const Badge = () => {
                         <motion.div
                             variants={slidersVariants}
                             whileHover="hover"
-                            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-3 drop-shadow-lg transition active:bg-black hover:cursor-pointer z-10"
+                            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white border-2 border-black rounded-full p-3 drop-shadow-lg transition active:bg-black hover:cursor-pointer z-10"
                             onClick={handleNext}
                         >
                             <svg

@@ -49,12 +49,12 @@ const Home = () => {
               </button>
               </div>
 
-              {/* View Work button */}
+              {/* View Blog button */}
               <div className='max-w-[550px] h-[100px] flex place-content-end' to="work" smooth={true} duration={500}>
               <button className='text-[black] bg-white py-4 px-4 self-start inline border-black border-t-2 border-l-2 border-r-4 border-b-4
               hover:text-black hover:bg-[#ffdede] hover:border-r-2 hover:border-b-2 duration-300 active:bg-[#f8a0a0]'>
-                <Link to="work" smooth={true} duration={500}>
-                View Work
+                <Link to="posts" smooth={true} duration={500}>
+                View Blog
                 </Link>
               </button>
               </div>
