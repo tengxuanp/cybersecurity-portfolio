@@ -35,7 +35,7 @@ const Home = () => {
                 <span className='text-[4rem] sm:text-[6rem] font-bold text-black'>Rafael</span></p>
               <div className="bg-[#ffdede] inline-block px-2 pt-2">
               <p className=' text-black rounded-sm p-2 text-center max-w-[700px] animate-typing overflow-hidden whitespace-nowrap inline-block py-0'>
-                <span className="animate-blinkCaret border-r-2 border-black">Front-end Developer. </span></p>
+                <span className="animate-blinkCaret border-r-2 border-black">Penetration Tester. </span></p>
               </div>
               {/* About Me button */}
               <div>

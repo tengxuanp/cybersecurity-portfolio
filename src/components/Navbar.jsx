@@ -25,14 +25,14 @@ const Navbar = () => {
             Home
             </Link>    
             </li>
-            {/* <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
-            <Link to="skills" smooth={true} duration={500}>
-            Skills
-            </Link>     
-            </li> */}
             <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
             <Link to="work" smooth={true} duration={500}>
             Portfolio
+            </Link>     
+            </li>
+            <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
+            <Link to="posts" smooth={true} duration={500}>
+            Blog
             </Link>     
             </li>
             <li className='hover:bg-black hover:text-white rounded-lg transition-colors'>
@@ -60,6 +60,16 @@ const Navbar = () => {
             </Link> 
             </li>
             <li className='py-6 text-3xl hover:bg-black hover:text-white rounded-lg transition-colors'>
+            <Link onClick={handleClick} to="work" smooth={true} duration={500}>
+            Portfolio
+            </Link>     
+            </li>
+            <li className='py-6 text-3xl hover:bg-black hover:text-white rounded-lg transition-colors'>
+            <Link onClick={handleClick} to="posts" smooth={true} duration={500}>
+            Blog
+            </Link>     
+            </li>
+            <li className='py-6 text-3xl hover:bg-black hover:text-white rounded-lg transition-colors'>
             <Link onClick={handleClick} to="about" smooth={true} duration={500}>
             About
             </Link>     
@@ -68,11 +78,6 @@ const Navbar = () => {
             <Link onClick={handleClick} to="skills" smooth={true} duration={500}>
             Skills
             </Link>
-            </li>
-            <li className='py-6 text-3xl hover:bg-black hover:text-white rounded-lg transition-colors'>
-            <Link onClick={handleClick} to="work" smooth={true} duration={500}>
-            Portfolio
-            </Link>     
             </li>
             <li className='py-6 text-3xl hover:bg-black hover:text-white rounded-lg transition-colors'>
             <Link onClick={handleClick} to="contact" smooth={true} duration={500}>

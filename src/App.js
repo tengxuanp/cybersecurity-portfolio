@@ -9,6 +9,7 @@ import Scenery from "./components/Scenery";
 import Cert from "./components/Cert";
 import Journey from "./components/Journey";
 import Aspiration from "./components/Aspiration";
+import Posts from "./components/Posts";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <Home />
       
       <Work />
+      <Posts />
 
       <Scenery />
       <About />
