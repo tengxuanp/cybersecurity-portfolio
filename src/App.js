@@ -29,7 +29,7 @@ function App() {
       {/* <Aspiration /> */}
       <Contact />
       
-      <div className="flex justify-center self-center">©️ 2026 Rafael Pang. All Rights Reserved</div>
+      <div className="flex justify-center self-center py-8 bg-white">©️ 2026 Rafael Pang. All Rights Reserved</div>
     </div>
   );
 }

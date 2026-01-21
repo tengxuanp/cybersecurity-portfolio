@@ -135,7 +135,7 @@ const About = () => {
 
   return (
     // bg-[#10101b]
-    <div name='about' className='about w-full p-8 bg-white text-black' style={{ height: "100vh" }} >
+    <div name='about' className='about w-full p-8 bg-white text-black min-h-screen' >
          <div className=' block'>
             <div className='mt-10 ml-6 flex justify-center self-center z-[999]'>
             {/* <img className='w-[12rem] translate-y-4 rounded-full object-top my-4 ' src={chucky} alt='Profile Picture' /> */}
@@ -161,8 +161,8 @@ const About = () => {
                   <p className={passion ? 'text-gray-300' : 'font-bold'}>Personal <br /> Information</p>
                 </div>
                 
-                <div className='flex justify-center self-center'>
-                <div className="translate-y-[-2rem] p-4 h-[10rem] w-[30rem]">
+                <div className='flex justify-center self-center mb-16'>
+                <div className="translate-y-[-2rem] p-4 min-h-[10rem] w-full max-w-[30rem]">
                 {passion? 
                   <p className=" text-black max-w-xl text-left first-letter:text-5xl first-letter:mr-3 first-letter:float-left">I am an aspiring Penetration Tester with a Master’s in Cybersecurity and over 4 years of technical experience across frontend development and IT infrastructure. While I began my career crafting digital experiences, I have shifted my focus to cybersecurity, driven by a passion for safeguarding digital assets and combating cyber threats. <br /> <br />
                       <br />

@@ -5,7 +5,7 @@ const Contact = () => {
   const emailAddress = 'tengxuanp@hotmail.com';
 
   return (
-    <div name='contact' className='w-full h-screen bg-white flex justify-center items-center p-4'>
+    <div name='contact' className='w-full min-h-screen bg-white flex justify-center items-center p-4 py-16'>
       {/* #fce7e7 */}
       <div className='flex-col text-right -ml-8'>
         <div className='border-2 border-black border-dashed rounded-full text-xl bg-[#ffada8] pr-8 py-2 cursor-pointer -mr-8 ml-8 hover:-mr-5 hover:ml-5 transition-all'><a href={`mailto:${emailAddress}`}>Email</a></div>
